@@ -17,3 +17,8 @@ message = output.format(user, domain)
 
 # display output message
 print(message)
+
+
+# Optional, slightly slimmer "format message":
+# output = "Your username is {} and your domain name is {}".format(user, domain)
+# print(output)
