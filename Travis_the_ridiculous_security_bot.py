@@ -20,21 +20,21 @@ while True:
         
         if remove == "y":
             known_users.remove(name)
-            print("I'm sure you're coming back soon. See you later!")
+            print("I'm sure you're coming back soon. See you later! \n")
         elif remove == "n":
-            print("No problem, I didn't want you to leave anyway!")
+            print("No problem, I didn't want you to leave anyway! \n")
             
     else:
         print("Hmmm, I don't see you on my list, {}.".format(name))
         add_me = input("Would you like to be added to the system? (y/n): ").strip().lower()
         if add_me == "y":
             known_users.append(name)
-            print("Ok, you're added!")
+            print("Ok, you're added! \n")
         elif add_me == "n":
             regret = input("Are you really sure? (y/n): ").strip().lower()
             if regret == "n":
                 known_users.append(name)
-                print("I knew you would change your mind! Welcome to the system!")
+                print("I knew you would change your mind! Welcome to the system! \n")
             elif regret == "y":
-                print("Alright then. But you don't know what you're missing out. Mumble, grumble.")            
+                print("Alright then. But you don't know what you're missing out. Mumble, grumble. \n")            
 
