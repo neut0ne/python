@@ -39,15 +39,15 @@ class Coin(object):
         choice = random.choice(heads_options)
         self.heads = choice
 
-    def __str__(self): # cleans up output of final, complete string. Defines what comes out when you print that object.
+    def __str__(self):                              # cleans up output of final, complete string. Defines what comes out when you print that object.
         if self.original_value >= 1.00:
             return "£{} coin".format(int(self.original_value))
         else:
             return "{}p coin".format(int(self.original_value * 100))
 
-class One_Pence(Coin):
+class One_Pence(Coin):                              # class child_of(parent)
     def __init__(self):
-        data = {
+        data = {                                    # this is a dictionary with unique data pairs for this child class
             "original_value": 0.01,
             "clean_colour": "bronze",
             "rusty_colour": "brownish",
@@ -56,7 +56,7 @@ class One_Pence(Coin):
             "thickness": 1.52,
             "mass": 3.56
             }
-        super(One_Pence, self).__init__(**data)    
+        super(One_Pence, self).__init__(**data)    # unpacks the data from the dictionary, making the data keyword args.
 
 class Two_Pence(Coin):
     def __init__(self):
@@ -76,7 +76,7 @@ class Five_Pence(Coin):
         data = {
             "original_value": 0.05,
             "clean_colour": "silver",
-            "rusty_colour": None, # Polymorfism: overriding standard behaviour from parent class, because silver coins don't rust! 
+            "rusty_colour": None,                   # Polymorfism: overriding standard behaviour from parent class, because silver coins don't rust! 
             "num_edges": 1,
             "diameter": 18.0,
             "thickness": 1.77,
@@ -85,7 +85,7 @@ class Five_Pence(Coin):
         super().__init__(**data)
 
         def rust(self):
-            self.colour = self.clean_colour # this is _polymorphism_, multiple definitions of functions. Overrides parent function.
+            self.colour = self.clean_colour         # Polymorfism in practice, multiple definitions of functions. Overrides parent function.
 
         def clean(self):
             self.colour = self.clean_colour
@@ -147,9 +147,9 @@ class Fifty_Pence(Coin):
         def clean(self):
             self.colour = self.clean_colour
 
-class Pound(Coin): # class child_of(parent)
+class Pound(Coin): 
     def __init__(self):
-        data = { # this is a dictionary with unique data pairs for this child class
+        data = { 
             "original_value": 1.00,
             "clean_colour": "gold",
             "rusty_colour": "greenish",
@@ -158,7 +158,7 @@ class Pound(Coin): # class child_of(parent)
             "thickness": 3.15,
             "mass": 9.5
             }
-        super().__init__(**data) # unpacks the data from the dictionary, making the data keyword args.
+        super().__init__(**data) 
 
 class Two_Pound(Coin):
     def __init__(self):
